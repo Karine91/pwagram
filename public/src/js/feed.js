@@ -92,8 +92,11 @@ function createCard(data) {
 
 function updateUI(data) {
   clearCards();
-  for (var i = 0; i < data.length; i++) {
-    createCard(data[i]);
+  if(data){
+
+    for (var i = 0; i < data.length; i++) {
+      createCard(data[i]);
+    }
   }
 }
 
@@ -156,7 +159,10 @@ form.addEventListener('submit', function(event) {
   }
 
   closeCreatePostModal();
-
+  console.log(
+    "serviceWorker" in navigator,
+    "SyncManager" in window
+  );
   if ('serviceWorker' in navigator && 'SyncManager' in window) {
     navigator.serviceWorker.ready
       .then(function(sw) {
@@ -170,6 +176,7 @@ form.addEventListener('submit', function(event) {
             return sw.sync.register('sync-new-posts');
           })
           .then(function() {
+            console.log("registered sync-new-posts");
             var snackbarContainer = document.querySelector('#confirmation-toast');
             var data = {message: 'Your Post was saved for syncing!'};
             snackbarContainer.MaterialSnackbar.showSnackbar(data);
