@@ -1,7 +1,7 @@
 importScripts('/src/js/idb.js');
 importScripts('/src/js/utility.js');
 
-var CACHE_STATIC_NAME = 'static-v24';
+var CACHE_STATIC_NAME = 'static-v29';
 var CACHE_DYNAMIC_NAME = 'dynamic-v2';
 var STATIC_FILES = [
   '/',
@@ -190,27 +190,24 @@ self.addEventListener('sync', function(event){
     event.waitUntil(
       readAllData('sync-posts').then(function(data){
         for(var dt of data){
+          var postData = new FormData();
+
+          postData.append('id', dt.id);
+          postData.append("title", dt.title);
+          postData.append("location", dt.location);
+          postData.append("file", dt.picture, dt.id + '.png');
+
           fetch(
             "https://us-central1-pgram-836b3.cloudfunctions.net/storePostData",
             {
               method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-              },
-              body: JSON.stringify({
-                id: dt.id,
-                title: dt.title,
-                location: dt.location,
-                image:
-                  "https://firebasestorage.googleapis.com/v0/b/pgram-836b3.appspot.com/o/sf-boat.jpg?alt=media&token=d273acc8-7dae-4f8f-ace4-b003b0e7cb99"
-              })
+              body: postData
             }
           )
             .then(function(res) {
               console.log("Sent data", res);
               if (res.ok) {
-                res.json().then(function(resData){
+                res.json().then(function(resData) {
                   deleteItemFromData(
                     "sync-posts",
                     resData.id
