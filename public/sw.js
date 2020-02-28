@@ -1,7 +1,7 @@
 importScripts('/src/js/idb.js');
 importScripts('/src/js/utility.js');
 
-var CACHE_STATIC_NAME = 'static-v33';
+var CACHE_STATIC_NAME = 'static-v37';
 var CACHE_DYNAMIC_NAME = 'dynamic-v3';
 var STATIC_FILES = [
   '/',
@@ -113,6 +113,7 @@ self.addEventListener('fetch', function (event) {
                   })
               })
               .catch(function (err) {
+                console.log(err);
                 return caches.open(CACHE_STATIC_NAME)
                   .then(function (cache) {
                     if (event.request.headers.get('accept').includes('text/html')) {
@@ -195,6 +196,14 @@ self.addEventListener('sync', function(event) {
             postData.append('title', dt.title);
             postData.append('location', dt.location);
             postData.append('file', dt.picture, dt.id + '.png');
+            postData.append(
+              "rawLocationLat",
+              dt.rawLocation.lat
+            );
+            postData.append(
+              "rawLocationLng",
+              dt.rawLocation.lng
+            );
 
             fetch(
               "https://us-central1-pgram-836b3.cloudfunctions.net/storePostData",
