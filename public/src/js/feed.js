@@ -43,7 +43,7 @@ locationBtn.addEventListener("click", function(event) {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      locationInput.value = "In Munich";
+      locationInput.value = position.coords.latitude + ', '+ position.coords.longitude;
       manualLocation.classList.add("is-focused");
     },
     function(err) {
@@ -108,6 +108,7 @@ function initializeMedia() {
     })
     .catch(function(err) {
       imagePickerArea.style.display = "block";
+      captureButton.style.display = "none";
     });
 }
 
