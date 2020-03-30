@@ -85,7 +85,7 @@ workboxSW.router.registerRoute(
 workboxSW.precache([
   {
     "url": "404.html",
-    "revision": "0a27a4163254fc8fce870c8cc3a3f94f"
+    "revision": "a4e2271d19eb1f6f93a15e1b7a4e74dd"
   },
   {
     "url": "favicon.ico",
@@ -93,71 +93,27 @@ workboxSW.precache([
   },
   {
     "url": "index.html",
-    "revision": "fd48136656e4e3192e3a1e6214e6a965"
+    "revision": "8d57577a2c3f8d7c7fe2c0ff802aaccf"
   },
   {
     "url": "manifest.json",
-    "revision": "d11c7965f5cfba711c8e74afa6c703d7"
+    "revision": "a03dcc57fa73ef4db441cdfc38d9ff96"
   },
   {
     "url": "offline.html",
-    "revision": "45352e71a80a5c75d25e226e7330871b"
-  },
-  {
-    "url": "service-worker.js",
-    "revision": "b185d88ed25ab0aaf42388b09afd4db8"
+    "revision": "0556e117187e3659c7eebe4730dd6594"
   },
   {
     "url": "src/css/app.css",
-    "revision": "f27b4d5a6a99f7b6ed6d06f6583b73fa"
+    "revision": "ffed0d57e450481d115a3e1eaccfe002"
   },
   {
     "url": "src/css/feed.css",
-    "revision": "5c3409e285fe56b703ed083c6a578377"
+    "revision": "6255f7921c623752af3e840e81f0a18f"
   },
   {
     "url": "src/css/help.css",
-    "revision": "1c6d81b27c9d423bece9869b07a7bd73"
-  },
-  {
-    "url": "src/js/app.js",
-    "revision": "be4415e90381601b7a4f98813d3de061"
-  },
-  {
-    "url": "src/js/feed.js",
-    "revision": "0ed7c03c628b0283319d38ef9c747adb"
-  },
-  {
-    "url": "src/js/fetch.js",
-    "revision": "6b82fbb55ae19be4935964ae8c338e92"
-  },
-  {
-    "url": "src/js/idb.js",
-    "revision": "017ced36d82bea1e08b08393361e354d"
-  },
-  {
-    "url": "src/js/material.min.js",
-    "revision": "713af0c6ce93dbbce2f00bf0a98d0541"
-  },
-  {
-    "url": "src/js/promise.js",
-    "revision": "10c2238dcd105eb23f703ee53067417f"
-  },
-  {
-    "url": "src/js/utility.js",
-    "revision": "4853a87685922cdf08b8bc5ed3f6f85e"
-  },
-  {
-    "url": "sw-base.js",
-    "revision": "6771949faae39fde0827d02f64bdc80a"
-  },
-  {
-    "url": "sw.js",
-    "revision": "3066be0b63e5dd6359e16c11c09f483e"
-  },
-  {
-    "url": "workbox-sw.prod.v2.1.3.js",
-    "revision": "a9890beda9e5f17e4c68f42324217941"
+    "revision": "81922f16d60bd845fd801a889e6acbd7"
   },
   {
     "url": "src/images/main-image-lg.jpg",
@@ -174,6 +130,34 @@ workboxSW.precache([
   {
     "url": "src/images/sf-boat.jpg",
     "revision": "0f282d64b0fb306daf12050e812d6a19"
+  },
+  {
+    "url": "src/js/app.min.js",
+    "revision": "73b8b904f61de6e07bebd9c142c23125"
+  },
+  {
+    "url": "src/js/feed.min.js",
+    "revision": "73991de89f11dd8ced49140044693768"
+  },
+  {
+    "url": "src/js/fetch.min.js",
+    "revision": "480f4a45212646274044b629017908c4"
+  },
+  {
+    "url": "src/js/idb.min.js",
+    "revision": "88ae80318659221e372dd0d1da3ecf9a"
+  },
+  {
+    "url": "src/js/material.min.js",
+    "revision": "e68511951f1285c5cbf4aa510e8a2faf"
+  },
+  {
+    "url": "src/js/promise.min.js",
+    "revision": "d62c60740456a237885eba78e763c852"
+  },
+  {
+    "url": "src/js/utility.min.js",
+    "revision": "a4d4cb3fb469d7c5e563403c9bac634c"
   }
 ]);
 
